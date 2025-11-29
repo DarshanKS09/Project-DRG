@@ -1,0 +1,173 @@
+/* === GLOBAL BINANCE DARK THEME === */
+body {
+  margin: 0;
+  padding: 0;
+  background: #0b0b0d;       /* Binance deep black */
+  color: #e6edf3;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+}
+
+/* =============================
+      HEADER
+============================= */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #1f2125;
+  margin-bottom: 25px;
+}
+
+.header h2 {
+  margin: 0;
+  color: #f0b90b;           /* Binance Yellow */
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 8px rgba(240, 185, 11, 0.4);
+}
+
+/* =============================
+      NAV LINKS
+============================= */
+nav a {
+  margin-left: 14px;
+  font-size: 14px;
+  opacity: 0.7;
+  color: #e6edf3;
+  transition: 0.25s;
+}
+
+nav a:hover {
+  opacity: 1;
+  color: #f0b90b;
+  text-shadow: 0 0 10px rgba(240, 185, 11, 0.5);
+}
+
+/* =============================
+        CARD
+============================= */
+.card {
+  background: #111316;
+  padding: 26px;
+  border-radius: 14px;
+  border: 1px solid #1f2125;
+  box-shadow: 0 0 20px rgba(255, 255, 0, 0.04);
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  border-color: #f0b90b;
+  box-shadow: 0 0 25px rgba(240, 185, 11, 0.25);
+}
+
+/* =============================
+        LOGO
+============================= */
+.logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #f0b90b, #e7a408);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26px;
+  font-weight: bold;
+  color: #0b0b0d;
+  box-shadow: 0 0 15px rgba(240, 185, 11, 0.5);
+}
+
+/* =============================
+        TEXT
+============================= */
+.small {
+  font-size: 14px;
+  opacity: 0.8;
+  color: #b3b3b3;
+}
+
+/* =============================
+        BUTTONS
+============================= */
+.button {
+  background: #f0b90b;
+  padding: 10px 18px;
+  border-radius: 8px;
+  color: #0b0b0d;
+  border: 1px solid #e6a800;
+  font-weight: 600;
+  transition: 0.25s ease;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #e6a800;
+  box-shadow: 0 0 15px rgba(240, 185, 11, 0.5);
+}
+
+/* SEND BUTTON (Green) */
+.send-btn {
+  background: #16a34a;
+  border: 1px solid #22c55e;
+  color: #e6edf3;
+}
+
+.send-btn:hover {
+  background: #15803d;
+  box-shadow: 0 0 15px rgba(22, 163, 74, 0.4);
+}
+
+/* =============================
+          INPUTS
+============================= */
+.input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #1f2125;
+  background: #0b0c0e;
+  color: #e6edf3;
+  font-size: 14px;
+  margin-top: 8px;
+  transition: 0.25s;
+}
+
+.input:focus {
+  border-color: #f0b90b;
+  box-shadow: 0 0 12px rgba(240, 185, 11, 0.3);
+  outline: none;
+}
+
+/* =============================
+          WALLET INFO
+============================= */
+.wallet-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.balance-box {
+  padding: 14px;
+  background: #14171c;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  border: 1px solid #1f2125;
+  transition: 0.25s ease;
+}
+
+.balance-box:hover {
+  border-color: #f0b90b;
+  box-shadow: 0 0 15px rgba(240, 185, 11, 0.25);
+}
+
+/* =============================
+      TRANSFER FORM
+============================= */
+.transfer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

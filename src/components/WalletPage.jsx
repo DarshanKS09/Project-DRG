@@ -1,43 +1,57 @@
-import React, { useEffect, useState } from 'react'
-import { useAccount, useConnect } from 'wagmi'
-import { TOKEN_ADDRESS } from '../utils/constants'
-import TokenBalance from './TokenBalance'
+import React from "react";
+import { useAccount, useConnect } from "wagmi";
+import TokenBalance from "./TokenBalance";
+import TokenPricePancake from "./TokenPricePancake";
+import { TOKEN_ADDRESS } from "../utils/constants";
 
-export default function WalletPage(){
-  const { address, isConnected } = useAccount()
-  const { connect, connectors } = useConnect()
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(()=>{setMounted(true)}, [])
+export default function WalletPage() {
+  const { address, isConnected } = useAccount();
+  const { connect, connectors } = useConnect();
 
   return (
     <div className="card">
       {!isConnected ? (
         <div>
           <h3>Connect your MetaMask wallet</h3>
-          <div style={{marginTop:12}}>
-            {connectors.map((c) => (
-              <button key={c.id} className="button" style={{marginRight:10}} onClick={() => connect({ connector: c })}>
-                Connect {c.name}
-              </button>
-            ))}
-          </div>
+
+          <button
+            className="button"
+            style={{ marginTop: 12 }}
+            onClick={() => connect({ connector: connectors[0] })}
+          >
+            Connect MetaMask
+          </button>
         </div>
       ) : (
         <div>
           <h3>Wallet</h3>
           <div className="small">Address: {address}</div>
 
-          <div style={{marginTop:16}}>
+          <div style={{ marginTop: 16 }}>
             <TokenBalance userAddress={address} />
           </div>
 
-          <div style={{marginTop:18}}>
-            <a href="/transfer"><button className="button">Send / Transfer</button></a>
-            <a href="https://pancakeswap.finance/swap?outputCurrency=" style={{marginLeft:12}}><button className="button">Swap (Pancake)</button></a>
+          {/* Price under balance */}
+          <div style={{ marginTop: 8 }}>
+            <TokenPricePancake tokenAddress={TOKEN_ADDRESS} />
+          </div>
+
+          <div style={{ marginTop: 18, display: "flex", gap: "12px" }}>
+            <a href="/transfer">
+              <button className="button">Send / Transfer</button>
+            </a>
+
+            <a href="https://pancakeswap.finance/swap">
+              <button className="button">Swap</button>
+            </a>
+
+            {/* ⭐ NEW: Stake Button */}
+            <a href="/staking">
+              <button className="button">Stake</button>
+            </a>
           </div>
         </div>
       )}
     </div>
-  )
+  );
 }

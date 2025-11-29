@@ -8,6 +8,7 @@ export default function TokenBalance({ userAddress }){
   const [decimals, setDecimals] = useState(18)
   const [priceInBnb, setPriceInBnb] = useState(null)
   const [priceUsd, setPriceUsd] = useState(null)
+console.log("TOKEN ADDRESS ->", import.meta.env.VITE_TOKEN_ADDRESS);
 
   useEffect(()=>{
     if(!userAddress) return
@@ -56,11 +57,6 @@ export default function TokenBalance({ userAddress }){
       <div style={{marginTop:12}}>
         <div className="small">Balance:</div>
         <div style={{fontSize:20,fontWeight:700}}>{balance===null? 'Loading...' : `${balance.toLocaleString()} DRg`}</div>
-      </div>
-
-      <div style={{marginTop:12}}>
-        <div className="small">Estimated Price:</div>
-        <div>{priceInBnb===null ? '—' : `${priceInBnb} BNB (${priceUsd ? ('$'+priceUsd.toFixed(6)) : 'Fetching USD...'})`}</div>
       </div>
 
       <div style={{marginTop:8}} className="small">Note: Price comes from PancakeSwap pair and CoinGecko BNB price.</div>
